@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+.card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.link {
+=======
 .blogPostItem {
   background: white;
   border-radius: 8px;
@@ -11,10 +27,27 @@
 }
 
 .title {
+>>>>>>> 5bd1606ef09ad3a5fc6efb478f17573066fc0f41
   text-decoration: none;
   color: inherit;
 }
 
+<<<<<<< HEAD
+.title {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.summary {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #999;
+=======
 .title h2 {
   margin: 0 0 1rem;
   color: #2c3e50;
@@ -59,4 +92,5 @@
   .date {
     font-size: 12px;
   }
+>>>>>>> 5bd1606ef09ad3a5fc6efb478f17573066fc0f41
 }
