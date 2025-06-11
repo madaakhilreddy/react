@@ -1,6 +1,24 @@
+<<<<<<< HEAD
 /* components/BlogPostList.css */
 
 .post-list {
+=======
+<<<<<<< HEAD
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+=======
+.blogPostList {
+>>>>>>> 6af0c8844e915d96cef7fe8cbeede456bdd81e07
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
@@ -24,6 +42,7 @@
   transition: background-color 0.3s ease;
 }
 
+<<<<<<< HEAD
 .new-post-button:hover {
   background-color: #0056b3;
 }
@@ -67,4 +86,11 @@
 
 .edit-link:hover {
   text-decoration: underline;
+=======
+@media (min-width: 1200px) {
+  .blogPostList {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+>>>>>>> 5bd1606ef09ad3a5fc6efb478f17573066fc0f41
+>>>>>>> 6af0c8844e915d96cef7fe8cbeede456bdd81e07
 }
