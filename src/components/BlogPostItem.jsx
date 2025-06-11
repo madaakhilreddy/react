@@ -1,4 +1,4 @@
-import styles from './BlogPostItem.module.css';
+import styles from './blogPostItem.module.css';
 import { Link } from 'react-router-dom';
 
 export default function BlogPostItem({ post }) {
