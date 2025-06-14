@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import BlogPostList from './components/blogPostList';
-import BlogPostDetail from './components/blogPostDetails';
+import BlogPostDetail from './components/BlogPostDetail.jsx';
 import BlogPostForm from './components/blogPostForm';
 
 const initialPosts = [
@@ -46,10 +46,15 @@ function App() {
     navigate('/');
   };
 
+  const deletePost = (id) => {
+    setPosts(posts.filter(p => p.id !== id));
+    navigate('/');
+  };
+
   return (
     <Routes>
       <Route path="/" element={<BlogPostList posts={posts} />} />
-      <Route path="/posts/:id" element={<BlogPostDetail posts={posts} />} />
+      <Route path="/posts/:id" element={<BlogPostDetail posts={posts} onDelete={deletePost} />} />
       <Route path="/new" element={<BlogPostForm onSubmit={addPost} />} />
       <Route path="/edit/:id" element={<BlogPostForm posts={posts} onSubmit={updatePost} />} />
     </Routes>
