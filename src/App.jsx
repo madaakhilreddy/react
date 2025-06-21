@@ -2,8 +2,10 @@
 import React, { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import BlogPostList from './components/blogPostList';
-import BlogPostDetail from './components/BlogPostDetail.jsx';
+import BlogPostDetail from './components/BlogPostDetail';
 import BlogPostForm from './components/blogPostForm';
+import About from './components/About';
+import Layout from './components/Layout';
 
 const initialPosts = [
   {
@@ -29,7 +31,7 @@ const initialPosts = [
     content: '<p>Make your apps accessible for all users.</p>',
     author: 'Alex Roe',
     date: '2023-03-10'
-  },
+  }
 ];
 
 function App() {
@@ -52,12 +54,15 @@ function App() {
   };
 
   return (
-    <Routes>
-      <Route path="/" element={<BlogPostList posts={posts} />} />
-      <Route path="/posts/:id" element={<BlogPostDetail posts={posts} onDelete={deletePost} />} />
-      <Route path="/new" element={<BlogPostForm onSubmit={addPost} />} />
-      <Route path="/edit/:id" element={<BlogPostForm posts={posts} onSubmit={updatePost} />} />
-    </Routes>
+    <Layout> {/* 👈 Layout wraps ALL content */}
+      <Routes>
+        <Route path="/" element={<BlogPostList posts={posts} />} />
+        <Route path="/posts/:id" element={<BlogPostDetail posts={posts} onDelete={deletePost} />} />
+        <Route path="/new" element={<BlogPostForm onSubmit={addPost} />} />
+        <Route path="/edit/:id" element={<BlogPostForm posts={posts} onSubmit={updatePost} />} />
+        <Route path="/about" element={<About />} /> {/* ✅ This is now correctly wrapped */}
+      </Routes>
+    </Layout>
   );
 }
 
