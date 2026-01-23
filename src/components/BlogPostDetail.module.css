@@ -1,0 +1,85 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.postCard {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.postCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.postCard h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.postCard p {
+  margin: 0.25rem 0;
+  color: #555;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.newPostButton {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #005eff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.newPostButton:hover {
+  background-color: #0056b3;
+}
+
+.editLink {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.editLink:hover {
+  text-decoration: underline;
+}
+
+
+.deleteButton {
+  padding: 10px 20px;
+  background-color: #4f0606; /* RED */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%; /* Full width button like in your screenshot */
+}
+
+.deleteButton:hover {
+  background-color: #320909; /* Darker red on hover */
+}

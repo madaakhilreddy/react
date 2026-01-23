@@ -1,0 +1,65 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%; /* take up all available width from layout */
+}
+
+h1 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.newPostButton {
+  display: inline-block;
+  background-color: #0066ff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.postCard {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.postCard h2 {
+  margin: 0 0 10px;
+  color: #002b5c;
+  font-size: 22px;
+}
+
+.postCard p {
+  margin: 6px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.meta {
+  font-size: 14px;
+  color: #666;
+}
+
+.editLink {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.empty {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+}
