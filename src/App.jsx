@@ -14,6 +14,7 @@ const initialPosts = [
     summary: 'An introduction to React concepts and architecture.',
     content: '<p>This is the <strong>full content</strong> of Understanding React.</p>',
     author: 'John Doe',
+<<<<<<< HEAD
     date: '2024-05-15',
     comments: [
       {
@@ -24,6 +25,9 @@ const initialPosts = [
         avatar: ''
       }
     ]
+=======
+    date: '2024-05-15'
+>>>>>>> origin
   },
   {
     id: '2',
@@ -31,8 +35,12 @@ const initialPosts = [
     summary: 'Take your CSS skills to the next level with these tips.',
     content: '<p>This is the <em>complete article</em> on advanced CSS.</p>',
     author: 'Jane Smith',
+<<<<<<< HEAD
     date: '2024-05-20',
     comments: []
+=======
+    date: '2024-05-20'
+>>>>>>> origin
   },
   {
     id: '3',
@@ -40,8 +48,12 @@ const initialPosts = [
     summary: 'Tips for making your web applications more accessible.',
     content: '<p>Make your apps accessible for all users.</p>',
     author: 'Alex Roe',
+<<<<<<< HEAD
     date: '2023-03-10',
     comments: []
+=======
+    date: '2023-03-10'
+>>>>>>> origin
   }
 ];
 
@@ -50,7 +62,11 @@ function App() {
   const navigate = useNavigate();
 
   const addPost = (newPost) => {
+<<<<<<< HEAD
     setPosts([...posts, { ...newPost, id: Date.now().toString(), comments: [] }]);
+=======
+    setPosts([...posts, { ...newPost, id: Date.now().toString() }]);
+>>>>>>> origin
     navigate('/');
   };
 
@@ -59,6 +75,7 @@ function App() {
     navigate('/');
   };
 
+<<<<<<< HEAD
   const addComment = (postId, comment) => {
     setPosts(posts.map(p => {
       if (p.id === postId) {
@@ -71,6 +88,8 @@ function App() {
     }));
   };
 
+=======
+>>>>>>> origin
   const deletePost = (id) => {
     setPosts(posts.filter(p => p.id !== id));
     navigate('/');
@@ -80,6 +99,7 @@ function App() {
     <Layout> {/* 👈 Layout wraps ALL content */}
       <Routes>
         <Route path="/" element={<BlogPostList posts={posts} />} />
+<<<<<<< HEAD
         <Route
           path="/posts/:id"
           element={
@@ -90,6 +110,9 @@ function App() {
             />
           }
         />
+=======
+        <Route path="/posts/:id" element={<BlogPostDetail posts={posts} onDelete={deletePost} />} />
+>>>>>>> origin
         <Route path="/new" element={<BlogPostForm onSubmit={addPost} />} />
         <Route path="/edit/:id" element={<BlogPostForm posts={posts} onSubmit={updatePost} />} />
         <Route path="/about" element={<About />} /> {/* ✅ This is now correctly wrapped */}
