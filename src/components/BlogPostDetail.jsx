@@ -1,9 +1,11 @@
 // BlogPostDetail.jsx
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import CommentList from './CommentList';
+import CommentForm from './CommentForm';
 import styles from './BlogPostDetail.module.css';
 
-export default function BlogPostDetail({ posts, onDelete }) {
+export default function BlogPostDetail({ posts, onDelete, onAddComment }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [showConfirm, setShowConfirm] = useState(false);
@@ -15,6 +17,10 @@ export default function BlogPostDetail({ posts, onDelete }) {
   const handleDelete = () => {
     onDelete(id);
     navigate('/');
+  };
+
+  const handleCommentSubmit = (comment) => {
+    onAddComment(id, comment);
   };
 
   return (
@@ -31,6 +37,11 @@ export default function BlogPostDetail({ posts, onDelete }) {
         <button className={styles.deleteButton} onClick={() => setShowConfirm(true)}>
           Delete Post
         </button>
+      </div>
+
+      <div className={styles.commentsSection}>
+        <CommentList comments={post.comments} />
+        <CommentForm onSubmit={handleCommentSubmit} />
       </div>
 
       {showConfirm && (
