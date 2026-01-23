@@ -6,6 +6,7 @@ import BlogPostDetail from './components/BlogPostDetail';
 import BlogPostForm from './components/blogPostForm';
 import About from './components/About';
 import Layout from './components/Layout';
+import BlogPostList from './components/BlogPostList';
 
 const initialPosts = [
   {
