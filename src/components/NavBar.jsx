@@ -19,7 +19,11 @@ const NavBar = () => {
 
       <div className={styles.links}>
         <Link to="/" onClick={closeMobileMenu}>Home</Link>
+<<<<<<< HEAD
+        <Link to="/" onClick={closeMobileMenu}>Blog</Link>
+=======
         <Link to="/blog" onClick={closeMobileMenu}>Blog</Link>
+>>>>>>> origin
         <Link to="/about" onClick={closeMobileMenu}>About</Link>
       </div>
 
@@ -35,7 +39,11 @@ const NavBar = () => {
       {isMobileMenuOpen && (
         <div className={styles.mobileMenu}>
           <Link to="/" onClick={closeMobileMenu}>Home</Link>
+<<<<<<< HEAD
+          <Link to="/" onClick={closeMobileMenu}>Blog</Link>
+=======
           <Link to="/blog" onClick={closeMobileMenu}>Blog</Link>
+>>>>>>> origin
           <Link to="/about" onClick={closeMobileMenu}>About</Link>
         </div>
       )}

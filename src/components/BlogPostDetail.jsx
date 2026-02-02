@@ -1,9 +1,17 @@
 // BlogPostDetail.jsx
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
+import CommentList from './CommentList';
+import CommentForm from './CommentForm';
+import styles from './BlogPostDetail.module.css';
+
+export default function BlogPostDetail({ posts, onDelete, onAddComment }) {
+=======
 import styles from './BlogPostDetail.module.css';
 
 export default function BlogPostDetail({ posts, onDelete }) {
+>>>>>>> origin
   const { id } = useParams();
   const navigate = useNavigate();
   const [showConfirm, setShowConfirm] = useState(false);
@@ -17,6 +25,13 @@ export default function BlogPostDetail({ posts, onDelete }) {
     navigate('/');
   };
 
+<<<<<<< HEAD
+  const handleCommentSubmit = (comment) => {
+    onAddComment(id, comment);
+  };
+
+=======
+>>>>>>> origin
   return (
     <article className={styles.container}>
       <h1 className={styles.title}>{post.title}</h1>
@@ -33,6 +48,14 @@ export default function BlogPostDetail({ posts, onDelete }) {
         </button>
       </div>
 
+<<<<<<< HEAD
+      <div className={styles.commentsSection}>
+        <CommentList comments={post.comments} />
+        <CommentForm onSubmit={handleCommentSubmit} />
+      </div>
+
+=======
+>>>>>>> origin
       {showConfirm && (
         <div className={styles.confirmOverlay} onClick={() => setShowConfirm(false)}>
           <div
