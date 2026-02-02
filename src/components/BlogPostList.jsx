@@ -1,25 +1,40 @@
-// BlogPostList.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import BlogPostItem from './BlogPostItem';
+import SearchBar from './SearchBar';
 import styles from './BlogPostList.module.css';
 
-function BlogPostList({ posts }) {
-  if (!posts.length) return <p className={styles.empty}>No blog posts available.</p>;
+const BlogPostList = ({ posts }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    post.summary.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div className={styles.list}>
-      <h1>Blog Posts</h1>
-      <Link to="/new" className={styles.newPostButton}>New Post</Link>
-      {posts.map(post => (
-        <div className={styles.postCard} key={post.id}>
-          <Link to={`/posts/${post.id}`}><h2>{post.title}</h2></Link>
-          <p>{post.summary}</p>
-          <p className={styles.meta}>{post.author} | {new Date(post.date).toDateString()}</p>
-          <Link to={`/edit/${post.id}`} className={styles.editLink}>Edit</Link>
+    <>
+      <SearchBar
+        searchTerm={searchTerm}
+        onSearchChange={setSearchTerm}
+      />
+
+      {filteredPosts.length === 0 ? (
+        <p style={{ padding: '10px' }}>No matching blog posts found.</p>
+      ) : (
+        <div className={styles.blogPostList}>
+          {filteredPosts.map((post) => (
+            <BlogPostItem
+              key={post.id}
+              title={post.title}
+              summary={post.summary}
+              date={post.date}
+              url={post.url}
+            />
+          ))}
         </div>
-      ))}
-    </div>
+      )}
+    </>
   );
-}
+};
 
 export default BlogPostList;
